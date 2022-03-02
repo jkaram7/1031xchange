@@ -1,0 +1,209 @@
+<div>
+  <div>
+    <h1>
+      List of all acquisition criteria
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<% if session.fetch(:user_id) != nil %>
+
+<div>
+  <div>
+    <h2>
+      Add a new acquisition criterium
+    </h2>
+
+    <form action="/insert_acquisition_criterium" method="post">
+      <div>
+        <label for="period_end_date_box">
+          Period end date
+        </label>
+
+        <input type="datetime-local" id="period_end_date_box" name="query_period_end_date">
+      </div>
+
+      <div>
+        <label for="product_type_box">
+          Product type
+        </label>
+
+        <input type="text" id="product_type_box" name="query_product_type">
+      </div>
+
+      <div>
+        <label for="location_box">
+          Location
+        </label>
+
+        <input type="text" id="location_box" name="query_location">
+      </div>
+
+      <div>
+        <label for="trade_size_box">
+          Trade size
+        </label>
+
+        <input type="text" id="trade_size_box" name="query_trade_size">
+      </div>
+
+      <div>
+        <label for="notes_box">
+          Notes
+        </label>
+
+        <textarea id="notes_box" name="query_notes" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="cap_rate_min_box">
+          Cap rate min
+        </label>
+
+        <input type="text" id="cap_rate_min_box" name="query_cap_rate_min">
+      </div>
+
+      <div>
+        <label for="cap_rate_max_box">
+          Cap rate max
+        </label>
+
+        <input type="text" id="cap_rate_max_box" name="query_cap_rate_max">
+      </div>
+
+      <div>
+        <label for="property_sub_type_box">
+          Property sub type
+        </label>
+
+        <input type="text" id="property_sub_type_box" name="query_property_sub_type">
+      </div>
+
+      <div>
+        <label for="occupancy_box">
+          Occupancy
+        </label>
+
+        <input type="text" id="occupancy_box" name="query_occupancy">
+      </div>
+
+      <div>
+        <label for="return_profile_box">
+          Return profile
+        </label>
+
+        <input type="text" id="return_profile_box" name="query_return_profile">
+      </div>
+
+      <div>
+        <label for="preferred_tenant_box">
+          Preferred tenant
+        </label>
+
+        <input type="text" id="preferred_tenant_box" name="query_preferred_tenant">
+      </div>
+
+      <div>
+        <label for="sq_feet_box">
+          Sq feet
+        </label>
+
+        <input type="text" id="sq_feet_box" name="query_sq_feet">
+      </div>
+
+      <button>
+        Create acquisition criterium
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+
+<% end %>
+
+<div>
+  <div>
+    <table border="1">
+      <tr>
+
+        <th>
+          Product Type
+        </th>
+
+        <th>
+          Location
+        </th>
+
+        <th>
+          Trade Size
+        </th>
+
+        <th>
+          Occupancy
+        </th>
+
+        <th>
+          Sq. Feet
+        </th>
+
+        <th>
+          Views
+        </th>
+
+        <th>
+          Posted
+        </th>
+
+        <th>
+          Link
+        </th>
+
+      </tr>
+
+      <% @list_of_acquisition_criteria.each do |a_criteria| %>
+      <tr>
+        <td>
+          <%= a_criteria.product_type %>
+        </td>
+
+        <td>
+          <%= a_criteria.location %>
+        </td>
+
+        <td>
+          <%= a_criteria.trade_size %>
+        </td>
+
+        <td>
+          <%= a_criteria.occupancy %>
+        </td>
+
+        <td>
+          <%= a_criteria.sq_feet %>
+        </td>
+
+        <td>
+          <%= a_criteria.views.length %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_criteria.created_at) %>
+        </td>
+
+        <td>
+          <a href="/acquisition_criteria/<%= a_criteria.id %>">
+            View
+          </a>
+        </td>
+
+      </tr>
+      <% end %>
+
+    </table>
+  </div>
+</div>
+
+<hr>

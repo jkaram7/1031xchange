@@ -1,0 +1,130 @@
+<div>
+  <div>
+    <h1>
+      List of all views
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new view
+    </h2>
+
+    <form action="/insert_view" method="post">
+      <div>
+        <label for="id_acquisition_box">
+          Id acquisition
+        </label>
+
+        <input type="text" id="id_acquisition_box" name="query_id_acquisition">
+      </div>
+
+      <div>
+        <label for="id_viewer_box">
+          Id viewer
+        </label>
+
+        <input type="text" id="id_viewer_box" name="query_id_viewer">
+      </div>
+
+      <div>
+        <input type="checkbox" id="clicked_box" name="query_clicked" value="1">
+
+        <label for="clicked_box">Clicked</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="potential_lead_box" name="query_potential_lead" value="1">
+
+        <label for="potential_lead_box">Potential lead</label>
+      </div>
+
+      <button>
+        Create view
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Id acquisition
+        </th>
+
+        <th>
+          Id viewer
+        </th>
+
+        <th>
+          Clicked
+        </th>
+
+        <th>
+          Potential lead
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_views.each do |a_view| %>
+      <tr>
+        <td>
+          <%= a_view.id %>
+        </td>
+
+        <td>
+          <%= a_view.id_acquisition %>
+        </td>
+
+        <td>
+          <%= a_view.id_viewer %>
+        </td>
+
+        <td>
+          <%= a_view.clicked %>
+        </td>
+
+        <td>
+          <%= a_view.potential_lead %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_view.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_view.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/views/<%= a_view.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

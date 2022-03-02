@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      View #<%= @the_view.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/views">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_view/<%= @the_view.id %>">
+          Delete view
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Id acquisition
+      </dt>
+      <dd>
+        <%= @the_view.id_acquisition %>
+      </dd>
+
+      <dt>
+        Id viewer
+      </dt>
+      <dd>
+        <%= @the_view.id_viewer %>
+      </dd>
+
+      <dt>
+        Clicked
+      </dt>
+      <dd>
+        <%= @the_view.clicked %>
+      </dd>
+
+      <dt>
+        Potential lead
+      </dt>
+      <dd>
+        <%= @the_view.potential_lead %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_view.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_view.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit view
+    </h2>
+
+    <form action="/modify_view/<%= @the_view.id %>"  method="post" >
+      <div>
+        <label for="id_acquisition_box">
+          Id acquisition
+        </label>
+
+        <input type="text" id="id_acquisition_box" name="query_id_acquisition" value="<%= @the_view.id_acquisition %>">
+      </div>
+
+      <div>
+        <label for="id_viewer_box">
+          Id viewer
+        </label>
+
+        <input type="text" id="id_viewer_box" name="query_id_viewer" value="<%= @the_view.id_viewer %>">
+      </div>
+
+      <div>
+        <input type="checkbox" id="clicked_box" name="query_clicked" value="1" <%= "checked" if @the_view.clicked %>>
+
+        <label for="clicked_box">
+            Clicked
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="potential_lead_box" name="query_potential_lead" value="1" <%= "checked" if @the_view.potential_lead %>>
+
+        <label for="potential_lead_box">
+            Potential lead
+        </label>
+      </div>
+
+      <button>
+        Update view
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

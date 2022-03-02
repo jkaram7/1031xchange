@@ -7,15 +7,73 @@
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
     <meta charset="utf-8">
 
+    <link rel="stylesheet" href="/my_styles.css">
+
     <!-- Make it responsive to small screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
+
   </head>
 
   <body>
+
+    <nav>
+
+      <div class="row">
+      <% if session.fetch(:user_id) == nil %>
+        <div>
+          <a class="button" href="/">
+            Home
+          </a>
+        </div>
+
+        <div>
+          <a class="button" href="/user_sign_up">
+            Sign up
+          </a>
+        </div>
+
+        <div>
+          <a class="button" href="/user_sign_in">
+            Sign in
+          </a>
+        </div>
+
+        <% else %>
+
+          <div>
+          <a class="button" href="/">
+            Home
+          </a>
+        </div>
+
+        <div>
+          <a class="button" href="/edit_user_profile">
+            My profile
+          </a>
+        </div>
+
+        <div>
+          <a class="button" href="/user_sign_out">
+            Sign out
+          </a>
+        </div>
+
+        <% end %>
+      </div>
+
+<hr>
+<img src="https://www.ashleypetersonlaw.com/wp-content/uploads/2018/08/1031-Exchange-from-rental-home.jpg" width="100" height="100">
+    
+    <p><%= notice %> </p>
+    <p><%= alert %> </p>
+
+    </nav>
+
+
     <%= yield %>
   </body>
 </html>
