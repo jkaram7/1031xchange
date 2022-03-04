@@ -10,7 +10,7 @@
 
 <div>
   <div>
-    <table border="1">
+    <table class="styled-table">
       <tr>
 
         <th>
@@ -18,7 +18,7 @@
         </th>
 
         <th>
-          User
+          Sender
         </th>
 
         <th>
@@ -27,23 +27,52 @@
       </tr>
       
       <% @list_of_threads.each do |a_thread| %>
+      
+      <% dup = @list_of_messages.where({ :acquisition_id => a_thread.fetch(0)}).where({ :sender_id => a_thread.fetch(2)}).where({ :recipient_id => session.fetch(:user_id)}).length%>
+      
+      <% if dup > 0 && a_thread.fetch(1) == session.fetch(:user_id) %>
+
+      <%else%>
+
       <tr>
         
         <td>
           <%= @list_of_acquisition_criteria.where({ :id => a_thread.fetch(0)}).at(0).location %>
         </td>
 
+        <% if a_thread.fetch(1) == session.fetch(:user_id)%>
+          <%senderuser = a_thread.fetch(2)%>
+        <%else%>
+          <%senderuser = a_thread.fetch(1)%>
+        <%end%>
+
         <td>
-          <%= @list_of_users.where({ :id => a_thread.fetch(1)}).at(0).name %>
+          <%= @list_of_users.where({ :id => senderuser}).at(0).name %>
         </td>
 
         <td>
-          <a href="/messages/<%= a_thread.fetch(0) %>/ <%= a_thread.fetch(1) %>">
-            <%= @list_of_messages.where({ :acquisition_id => a_thread.fetch(0)}).where({ :sender_id => a_thread.fetch(1)}).where({ :read => false}).length %>  new messages
+        <% newmsgs = @list_of_messages.where({ :acquisition_id => a_thread.fetch(0)}).where({ :sender_id => senderuser}).where({ :read => false}).length %>
+
+          <%if newmsgs > 0 %>
+          
+          <a href="/messages/<%= a_thread.fetch(0) %>/ <%= senderuser %>" class="button3">
+            <%= newmsgs%>  new messages
           </a>
+
+          <%else%>
+
+          <a href="/messages/<%= a_thread.fetch(0) %>/ <%= senderuser %>" class="button2">
+            <%= newmsgs%>  new messages
+          </a>
+          
+          <%end%>
+
         </td>
 
       </tr>
+
+      <%end %>
+      
       <% end %>
     </table>
   </div>

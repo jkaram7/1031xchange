@@ -9,6 +9,14 @@ class AcquisitionCriteriaController < ApplicationController
 
   def show
 
+    #already a connection?
+    id_acquisition = params.fetch("path_id")
+
+    matching_messages = Message.where(sender_id: session.fetch(:user_id)).where({:acquisition_id => id_acquisition})
+
+    @list_of_messages = matching_messages
+
+
     #log a user clicking the link
     the_view = View.new
     the_view.id_acquisition = params.fetch("path_id")

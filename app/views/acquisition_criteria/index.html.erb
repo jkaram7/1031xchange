@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all acquisition criteria
+      List of acquisition criteria
     </h1>
   </div>
 </div>
@@ -12,11 +12,13 @@
 
 <div>
   <div>
-    <h2>
-      Add a new acquisition criterium
-    </h2>
 
     <form action="/insert_acquisition_criterium" method="post">
+     <table border="0">
+      <tr>
+
+        <th>
+
       <div>
         <label for="period_end_date_box">
           Period end date
@@ -56,6 +58,8 @@
 
         <textarea id="notes_box" name="query_notes" rows="3"></textarea>
       </div>
+      </th>
+      <th>
 
       <div>
         <label for="cap_rate_min_box">
@@ -112,8 +116,9 @@
 
         <input type="text" id="sq_feet_box" name="query_sq_feet">
       </div>
-
-      <button>
+      </th>
+      </table>
+      <button class="button2" >
         Create acquisition criterium
       </button>
     </form>
@@ -126,7 +131,7 @@
 
 <div>
   <div>
-    <table border="1">
+    <table class="styled-table">
       <tr>
 
         <th>
@@ -158,7 +163,7 @@
         </th>
 
         <th>
-          Link
+          
         </th>
 
       </tr>
@@ -194,7 +199,7 @@
         </td>
 
         <td>
-          <a href="/acquisition_criteria/<%= a_criteria.id %>">
+          <a href="/acquisition_criteria/<%= a_criteria.id %>" class="button3" padding="5px">
             View
           </a>
         </td>

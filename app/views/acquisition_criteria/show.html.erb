@@ -1,19 +1,14 @@
 <div>
   <div>
     <h1>
-      Acquisition criterium #<%= @the_acquisition_criterium.id %> details
+      Acquisition criteria details
     </h1>
 
     <div>
-      <div>
-        <a href="/acquisition_criteria">
-          Go back
-        </a>
-      </div>
 
       <% if session.fetch(:user_id) == @the_acquisition_criterium.user.id %>
       <div>
-        <a href="/delete_acquisition_criterium/<%= @the_acquisition_criterium.id %>">
+        <a href="/delete_acquisition_criterium/<%= @the_acquisition_criterium.id %>" class="button2" >
           Delete acquisition criterium
         </a>
       </div>
@@ -23,126 +18,179 @@
       <% if session.fetch(:user_id) != nil %>
 
       <% if session.fetch(:user_id) != @the_acquisition_criterium.user.id %>
+
+      <% if @list_of_messages.length > 0 %>
+
       <div>
-        <a href="/connect/<%= @the_acquisition_criterium.id %>">
+          You are already connected! Check your messages.
+      </div>
+
+      <%else%>
+      <div>
+        <a class="button3" href="/connect/<%= @the_acquisition_criterium.id %>">
           Connect
         </a>
       </div>
+      <%end%>
 
       <%end%>
 
       <%end%>
 
     </div>
+    
+    <div>
+    <div>
+    <table class="styled-table">
+      <tr>
 
-    <dl>
-      <dt>
+    <tr>
+      <th>
         Period end date
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.period_end_date %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Product type
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.product_type %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Location
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.location %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Trade size
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.trade_size %>
-      </dd>
-
-      <dt>
+      </th>
+      
+      <th>
         User name
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.user.name %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Notes
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.notes %>
-      </dd>
-
-      <dt>
+      </th>
+      
+      <th>
         Cap rate min
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.cap_rate_min %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Cap rate max
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.cap_rate_max %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Property sub type
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.property_sub_type %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Occupancy
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.occupancy %>
-      </dd>
-
-      <dt>
+      </th>
+      
+      <th>
         Return profile
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.return_profile %>
-      </dd>
-
-      <dt>
+      </th>
+      
+      <th>
         Preferred tenant
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.preferred_tenant %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Sq feet
-      </dt>
-      <dd>
-        <%= @the_acquisition_criterium.sq_feet %>
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_acquisition_criterium.created_at) %> ago
-      </dd>
+      </th>
 
-      <dt>
+      <th>
         Updated at
-      </dt>
-      <dd>
+      </th>
+
+      </tr>
+
+      <tr>
+      <td>
+        <%= @the_acquisition_criterium.period_end_date %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.product_type %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.location %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.trade_size %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.user.name %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.notes %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.cap_rate_min %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.cap_rate_max %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.property_sub_type %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.occupancy %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.return_profile %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.preferred_tenant %>
+      </td>
+
+      
+      <td>
+        <%= @the_acquisition_criterium.sq_feet %>
+      </td>
+
+      
+      <td>
+        <%= time_ago_in_words(@the_acquisition_criterium.created_at) %> ago
+      </td>
+
+      <td>
         <%= time_ago_in_words(@the_acquisition_criterium.updated_at) %> ago
-      </dd>
-    </dl>
+      </td>
+
+      </tr>
+
+      </table>
   </div>
 </div>
+
+  </div>
+</div>
+
+<% if session.fetch(:user_id) == @the_acquisition_criterium.user.id %>
 
 <hr>
 
@@ -259,11 +307,12 @@
         <input type="text" id="sq_feet_box" name="query_sq_feet" value="<%= @the_acquisition_criterium.sq_feet %>">
       </div>
 
-      <button>
+      <button class="button2" >
         Update acquisition criterium
       </button>
     </form>
   </div>
 </div>
+<% end %>
 
 <hr>

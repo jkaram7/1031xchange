@@ -11,9 +11,9 @@ class MessagesController < ApplicationController
     @list_of_users = User.all
     @list_of_messages = Message.all
     
-    matching_messages = Message.where({:recipient_id => session.fetch(:user_id)}).order({ :created_at => :desc })
+    matching_messages = Message.where(sender_id: session.fetch(:user_id)).or(Message.where(recipient_id: session.fetch(:user_id))).order({ :created_at => :desc })
 
-    @list_of_threads = matching_messages.distinct.pluck(:acquisition_id, :sender_id)
+    @list_of_threads = matching_messages.distinct.pluck(:acquisition_id, :sender_id, :recipient_id)
 
     render({ :template => "messages/index.html.erb" })
   end
@@ -23,6 +23,7 @@ class MessagesController < ApplicationController
     id_acquisition = params.fetch("criteria_id")
 
     matching_messages = Message.where(sender_id: id_sender).or(Message.where(recipient_id: id_sender)).where({:acquisition_id => id_acquisition})
+    matching_messages = matching_messages.where(sender_id: session.fetch(:user_id)).or(Message.where(recipient_id: session.fetch(:user_id))).where({:acquisition_id => id_acquisition})
 
     @list_of_messages = matching_messages.order({ :created_at => :desc })
 
@@ -50,9 +51,26 @@ class MessagesController < ApplicationController
 
     if the_message.valid?
       the_message.save
-      redirect_to("/messages", { :notice => "Message created successfully." })
+      redirect_to("/messages", { :notice => "Message sent successfully." })
     else
-      redirect_to("/messages", { :notice => "Message failed to create successfully." })
+      redirect_to("/messages", { :notice => "Message failed to send." })
+    end
+  end
+
+  def createThread
+
+    the_message = Message.new
+    the_message.sender_id = session.fetch(:user_id)
+    the_message.recipient_id = params.fetch("rec_id")
+    the_message.content = params.fetch("query_content")
+    the_message.read = false
+    the_message.acquisition_id = params.fetch("a_id")
+
+    if the_message.valid?
+      the_message.save
+      redirect_to("/messages/#{the_message.acquisition_id}/#{the_message.recipient_id}", { :notice => "Message sent successfully." })
+    else
+      redirect_to("/messages/#{the_message.acquisition_id}/#{the_message.recipient_id}", { :notice => "Message failed to send." })
     end
   end
 

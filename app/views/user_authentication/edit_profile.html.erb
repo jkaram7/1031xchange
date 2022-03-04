@@ -5,7 +5,7 @@
   <h5>
     Edit User Account
   </h5>
-
+  <hr>
   <div>
     <form action="/modify_user" method="post">
       <div>
@@ -39,19 +39,19 @@
         <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
       </div>
 
-      <button>
+      <button class="button2" >
         Update account
       </button>
     </form>
   </div>
-
+  <hr>
   <h5>
     My posts
   </h5>
   
   <div>
   <div>
-    <table border="1">
+    <table class="styled-table">
       <tr>
 
         <th>
@@ -83,7 +83,7 @@
         </th>
 
         <th>
-          Link
+          
         </th>
 
       </tr>
@@ -119,7 +119,7 @@
         </td>
 
         <td>
-          <a href="/acquisition_criteria/<%= a_criteria.id %>">
+          <a href="/acquisition_criteria/<%= a_criteria.id %>" class="button3" padding="5px">
             View
           </a>
         </td>
@@ -130,6 +130,7 @@
     </table>
   </div>
 </div>
+
 
   <%else%>
 

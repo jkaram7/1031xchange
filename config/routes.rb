@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   # CREATE
   post("/insert_message", { :controller => "messages", :action => "create" })
+  
+  post("/insert_message/:criteria_id/:sender_id", { :controller => "messages", :action => "createThread" })
           
   # READ
   get("/messages", { :controller => "messages", :action => "index" })

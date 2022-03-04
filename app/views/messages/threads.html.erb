@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all messages
+      Chat
     </h1>
   </div>
 </div>
@@ -14,7 +14,7 @@
       Add a new message
     </h2>
 
-    <form action="/insert_message" method="post">
+    <form action="/insert_message/<%=params.fetch("criteria_id")%>/<%=params.fetch("sender_id")%>" method="post">
 
       <div>
         <input id="acquisition_id" name="a_id" value= <%=params.fetch("criteria_id")%> type="hidden" ></input>
@@ -32,7 +32,7 @@
         <textarea id="content_box" name="query_content" rows="3"></textarea>
       </div>
 
-      <button>
+      <button class = "button3">
         Send message
       </button>
 
@@ -43,57 +43,28 @@
 <hr>
 <div>
   <div>
-    <table border="1">
+    <table class="styled-table">
       <tr>
-        <th>
-          ID
-        </th>
-
         <th>
           Sender
         </th>
 
         <th>
-          Recipient
+          Message
         </th>
 
         <th>
-          Content
+          Sent
         </th>
 
-        <th>
-          Read
-        </th>
-
-        <th>
-          Acquisition
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
       </tr>
       
       
       <% @list_of_messages.each do |a_message| %>
       <tr>
-        <td>
-          <%= a_message.id %>
-        </td>
 
         <td>
-          <%= a_message.sender_id %>
-        </td>
-
-        <td>
-          <%= a_message.recipient_id %>
+          <%= a_message.sender.name %>
         </td>
 
         <td>
@@ -101,25 +72,16 @@
         </td>
 
         <td>
-          <%= a_message.read %>
-        </td>
-
-        <td>
-          <%= a_message.acquisition_id %>
-        </td>
-
-        <td>
           <%= time_ago_in_words(a_message.created_at) %> ago
         </td>
-        <td>
-          <%= time_ago_in_words(a_message.updated_at) %> ago
-        </td>
+        
+        <%the_message = Message.where({ :id => a_message.id }).at(0)%>
 
-        <td>
-          <a href="/delete_message/<%= a_message.id %>">
-          Delete message
-        </a>
-        </td>
+        <% if the_message.recipient.id == session.fetch(:user_id) %>
+        <%the_message.read = true%>
+        <%the_message.save%>
+        <%end%>
+
       </tr>
       <% end %>
     </table>
