@@ -13,8 +13,12 @@ class MessagesController < ApplicationController
     
     matching_messages = Message.where(sender_id: session.fetch(:user_id)).or(Message.where(recipient_id: session.fetch(:user_id))).order({ :created_at => :desc })
 
-    @list_of_threads = matching_messages.distinct.pluck(:acquisition_id, :sender_id, :recipient_id)
-
+    if matching_messages != nil
+      @list_of_threads = matching_messages.distinct.pluck(:acquisition_id, :sender_id, :recipient_id)
+    else
+      @list_of_threads = nil
+    end
+    
     render({ :template => "messages/index.html.erb" })
   end
 
