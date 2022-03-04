@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 
     if matching_messages != nil
       #@list_of_threads = matching_messages.distinct.pluck(:acquisition_id, :sender_id, :recipient_id)
-      @list_of_threads = matching_messages
+      @list_of_threads = matching_messages.pluck(:acquisition_id, :sender_id, :recipient_id)
     else
       @list_of_threads = nil
     end
