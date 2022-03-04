@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_02_211659) do
+ActiveRecord::Schema.define(version: 2022_03_03_215408) do
 
   create_table "acquisition_criteria", force: :cascade do |t|
     t.datetime "period_end_date"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2022_03_02_211659) do
     t.string "return_profile"
     t.string "preferred_tenant"
     t.float "sq_feet"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.text "content"
+    t.boolean "read"
+    t.integer "acquisition_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

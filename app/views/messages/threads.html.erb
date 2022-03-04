@@ -1,0 +1,129 @@
+<div>
+  <div>
+    <h1>
+      List of all messages
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new message
+    </h2>
+
+    <form action="/insert_message" method="post">
+
+      <div>
+        <input id="acquisition_id" name="a_id" value= <%=params.fetch("criteria_id")%> type="hidden" ></input>
+      </div>
+
+      <div>
+        <input id="recipient_id" name="rec_id" value= <%=params.fetch("sender_id")%> type="hidden" ></input>
+      </div>
+
+      <div>
+        <label for="content_box">
+          Message
+        </label>
+
+        <textarea id="content_box" name="query_content" rows="3"></textarea>
+      </div>
+
+      <button>
+        Send message
+      </button>
+
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Sender
+        </th>
+
+        <th>
+          Recipient
+        </th>
+
+        <th>
+          Content
+        </th>
+
+        <th>
+          Read
+        </th>
+
+        <th>
+          Acquisition
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+      
+      
+      <% @list_of_messages.each do |a_message| %>
+      <tr>
+        <td>
+          <%= a_message.id %>
+        </td>
+
+        <td>
+          <%= a_message.sender_id %>
+        </td>
+
+        <td>
+          <%= a_message.recipient_id %>
+        </td>
+
+        <td>
+          <%= a_message.content %>
+        </td>
+
+        <td>
+          <%= a_message.read %>
+        </td>
+
+        <td>
+          <%= a_message.acquisition_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_message.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_message.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/delete_message/<%= a_message.id %>">
+          Delete message
+        </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

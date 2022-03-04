@@ -1,0 +1,52 @@
+<div>
+  <div>
+    <h1>
+      Conversations
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <table border="1">
+      <tr>
+
+        <th>
+          Location
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          New messages
+        </th>
+      </tr>
+      
+      <% @list_of_threads.each do |a_thread| %>
+      <tr>
+        
+        <td>
+          <%= @list_of_acquisition_criteria.where({ :id => a_thread.fetch(0)}).at(0).location %>
+        </td>
+
+        <td>
+          <%= @list_of_users.where({ :id => a_thread.fetch(1)}).at(0).name %>
+        </td>
+
+        <td>
+          <a href="/messages/<%= a_thread.fetch(0) %>/ <%= a_thread.fetch(1) %>">
+            <%= @list_of_messages.where({ :acquisition_id => a_thread.fetch(0)}).where({ :sender_id => a_thread.fetch(1)}).where({ :read => false}).length %>  new messages
+          </a>
+        </td>
+
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

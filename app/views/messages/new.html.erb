@@ -1,0 +1,44 @@
+<div>
+  <div>
+    <h1>
+      New connection
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Introduce yourself
+    </h2>
+
+    <form action="/insert_message" method="post">
+
+      <div>
+        <input id="acquisition_id" name="a_id" value= <%=params.fetch("path_id")%> type="hidden" ></input>
+      </div>
+      
+      <%acquisition_criteria = AcquisitionCriterium.where({ :id => params.fetch("path_id") }).at(0)%>
+      <% acquisition_criteria_user = acquisition_criteria.id_user %>
+
+      <div>
+        <input id="recipient_id" name="rec_id" value= <%=acquisition_criteria_user%> type="hidden" ></input>
+      </div>
+
+      <div>
+        <label for="content_box">
+          Message
+        </label>
+
+        <textarea id="content_box" name="query_content" rows="3"></textarea>
+      </div>
+
+      <button>
+        Send message
+      </button>
+    </form>
+  </div>
+</div>
+

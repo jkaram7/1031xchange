@@ -3,6 +3,29 @@ Rails.application.routes.draw do
   # homepage
   get("/", { :controller => "acquisition_criteria", :action => "index" })
 
+  # create connection
+  get("/connect/:path_id", { :controller => "messages", :action => "connection" })
+
+
+  # Routes for the Message resource:
+
+  # CREATE
+  post("/insert_message", { :controller => "messages", :action => "create" })
+          
+  # READ
+  get("/messages", { :controller => "messages", :action => "index" })
+  
+  get("/messages/:criteria_id/:sender_id", { :controller => "messages", :action => "conversations" })
+  
+  # UPDATE
+  
+  post("/modify_message/:path_id", { :controller => "messages", :action => "update" })
+  
+  # DELETE
+  get("/delete_message/:path_id", { :controller => "messages", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the View resource:
 
   # CREATE
