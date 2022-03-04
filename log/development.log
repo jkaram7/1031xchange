@@ -21187,3 +21187,242 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 1.8ms | Allocations: 15809)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constant RailsDb::RailsDbDataTableHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload RailsDb::RailsDbDataTableHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /workspace/1031xchange/config/environment.rb:5)
+Started GET "/?vscodeBrowserReqId=1646425878665" for 67.175.34.73 at 2022-03-04 20:31:18 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AcquisitionCriteriaController#index as HTML
+  Parameters: {"vscodeBrowserReqId"=>"1646425878665"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering acquisition_criteria/index.html.erb within layouts/application
+  [1m[36mAcquisitionCriterium Load (0.2ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" ORDER BY "acquisition_criteria"."created_at" DESC[0m
+  ↳ app/views/acquisition_criteria/index.html.erb:171
+  [1m[36mView Load (0.1ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 3]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  [1m[36mView Load (0.1ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 2]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  [1m[36mView Load (0.2ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 1]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  Rendered acquisition_criteria/index.html.erb within layouts/application (Duration: 194.7ms | Allocations: 368531)
+Completed 200 OK in 380ms (Views: 366.1ms | ActiveRecord: 2.1ms | Allocations: 724829)
+
+
+Started GET "/" for 67.175.34.73 at 2022-03-04 20:31:20 +0000
+Processing by AcquisitionCriteriaController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering acquisition_criteria/index.html.erb within layouts/application
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" ORDER BY "acquisition_criteria"."created_at" DESC[0m
+  ↳ app/views/acquisition_criteria/index.html.erb:171
+  [1m[36mView Load (0.1ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 3]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  [1m[36mView Load (0.1ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 2]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  [1m[36mView Load (0.1ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 1]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  Rendered acquisition_criteria/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3502)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 5532)
+
+
+Started GET "/user_sign_in" for 67.175.34.73 at 2022-03-04 20:31:25 +0000
+Processing by UserAuthenticationController#sign_in_form as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering user_authentication/sign_in.html.erb within layouts/application
+  Rendered user_authentication/sign_in.html.erb within layouts/application (Duration: 0.3ms | Allocations: 96)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 2729)
+
+
+Started POST "/user_verify_credentials" for 67.175.34.73 at 2022-03-04 20:31:31 +0000
+Processing by UserAuthenticationController#create_cookie as HTML
+  Parameters: {"query_email"=>"karam@gmail.com", "query_password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "karam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/user_authentication_controller.rb:10:in `create_cookie'
+Redirected to https://3000-jkaram7-1031xchange-19e2fy5xjfj.ws-us34.gitpod.io/
+Completed 302 Found in 229ms (ActiveRecord: 0.4ms | Allocations: 6078)
+
+
+Started GET "/" for 67.175.34.73 at 2022-03-04 20:31:31 +0000
+Processing by AcquisitionCriteriaController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering acquisition_criteria/index.html.erb within layouts/application
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" ORDER BY "acquisition_criteria"."created_at" DESC[0m
+  ↳ app/views/acquisition_criteria/index.html.erb:171
+  [1m[36mView Load (0.1ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 3]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  [1m[36mView Load (0.1ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 2]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  [1m[36mView Load (0.1ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 1]]
+  ↳ app/views/acquisition_criteria/index.html.erb:194
+  Rendered acquisition_criteria/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3501)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.7ms | Allocations: 5610)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:31:33 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3319)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 5124)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/messages/index.html.erb:29
+  app/controllers/messages_controller.rb:23:in `index'
+
+Started POST "/__better_errors/1d224ae8db62afd5/variables" for 67.175.34.73 at 2022-03-04 20:31:33 +0000
+  [1m[36mAcquisitionCriterium Load (0.2ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:32:36 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 3055)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 5030)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/messages/index.html.erb:29
+  app/controllers/messages_controller.rb:23:in `index'
+
+Started POST "/__better_errors/7016bcebb1ed957c/variables" for 67.175.34.73 at 2022-03-04 20:32:36 +0000
+  [1m[36mAcquisitionCriterium Load (0.2ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:32:38 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2579)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 3731)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/messages/index.html.erb:29
+  app/controllers/messages_controller.rb:23:in `index'
+
+Started POST "/__better_errors/190126c37b42c2d6/variables" for 67.175.34.73 at 2022-03-04 20:32:38 +0000
+  [1m[36mAcquisitionCriterium Load (0.2ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:32:39 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2579)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 3730)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/messages/index.html.erb:29
+  app/controllers/messages_controller.rb:23:in `index'
+
+Started POST "/__better_errors/2aa01b416f08ff7e/variables" for 67.175.34.73 at 2022-03-04 20:32:39 +0000
+  [1m[36mAcquisitionCriterium Load (0.2ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:32:42 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2579)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 3730)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/messages/index.html.erb:29
+  app/controllers/messages_controller.rb:23:in `index'
+
+Started POST "/__better_errors/cdbf4d1ec259db20/variables" for 67.175.34.73 at 2022-03-04 20:32:42 +0000
+  [1m[36mAcquisitionCriterium Load (0.2ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:33:23 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 509)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 3673)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:33:23 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 501)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3668)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:33:24 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 2052)
+
+

@@ -26,6 +26,8 @@
         </th>
       </tr>
       
+      <%if @list_of_threads != nil %>
+
       <% @list_of_threads.each do |a_thread| %>
       
       <% dup = @list_of_messages.where({ :acquisition_id => a_thread.fetch(0)}).where({ :sender_id => a_thread.fetch(2)}).where({ :recipient_id => session.fetch(:user_id)}).length%>
@@ -74,6 +76,8 @@
       <%end %>
       
       <% end %>
+      <% end %>
+      
     </table>
   </div>
 </div>
