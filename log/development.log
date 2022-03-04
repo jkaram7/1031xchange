@@ -21922,3 +21922,851 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 45ms (Views: 40.0ms | ActiveRecord: 2.0ms | Allocations: 35476)
 
 
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:47:08 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms | Allocations: 12436)
+
+
+
+NoMethodError - undefined method `distinct' for #<Array:0x00007f79caf89cd8>:
+  app/controllers/messages_controller.rb:18:in `index'
+
+Started POST "/__better_errors/90b3e3e9603027b9/variables" for 67.175.34.73 at 2022-03-04 20:47:09 +0000
+  [1m[36mAcquisitionCriterium Load (0.3ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC LIMIT ?[0m  [["sender_id", 1], ["recipient_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:47:13 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 3784)
+
+
+
+NoMethodError - undefined method `distinct' for #<Array:0x00007f7998d38330>:
+  app/controllers/messages_controller.rb:18:in `index'
+
+Started POST "/__better_errors/88b89069cc866789/variables" for 67.175.34.73 at 2022-03-04 20:47:13 +0000
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC LIMIT ?[0m  [["sender_id", 1], ["recipient_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:47:13 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 3784)
+
+
+
+NoMethodError - undefined method `distinct' for #<Array:0x000055b13cf046d0>:
+  app/controllers/messages_controller.rb:18:in `index'
+
+Started POST "/__better_errors/b59237696f22671b/variables" for 67.175.34.73 at 2022-03-04 20:47:14 +0000
+  [1m[36mAcquisitionCriterium Load (0.2ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC LIMIT ?[0m  [["sender_id", 1], ["recipient_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:47:26 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 35.3ms | Allocations: 25783)
+Completed 200 OK in 55ms (Views: 35.4ms | ActiveRecord: 3.5ms | Allocations: 37599)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:47:49 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 12844)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 1.4ms | Allocations: 15697)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:21 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 13358)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 1.8ms | Allocations: 17341)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:24 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 12844)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 1.5ms | Allocations: 15698)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:24 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 12844)
+Completed 200 OK in 20ms (Views: 15.9ms | ActiveRecord: 1.5ms | Allocations: 15705)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:26 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 12844)
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 1.6ms | Allocations: 15699)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:26 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 12844)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 1.5ms | Allocations: 15701)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:27 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 12844)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 1.5ms | Allocations: 15705)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:27 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 12844)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 1.5ms | Allocations: 15707)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:39 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 13357)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 1.4ms | Allocations: 17324)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:40 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 12844)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 1.4ms | Allocations: 15702)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:41 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 12844)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 1.7ms | Allocations: 15701)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:48:42 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 12844)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 1.8ms | Allocations: 15703)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:49:01 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 13355)
+Completed 200 OK in 26ms (Views: 21.2ms | ActiveRecord: 1.7ms | Allocations: 17322)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:49:01 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 174.5ms | Allocations: 13384)
+Completed 200 OK in 181ms (Views: 176.6ms | ActiveRecord: 1.5ms | Allocations: 17391)
+
+
+Started GET "/edit_user_profile" for 67.175.34.73 at 2022-03-04 20:49:07 +0000
+Processing by UserAuthenticationController#edit_profile_form as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  Rendering user_authentication/edit_profile.html.erb within layouts/application
+  [1m[36mAcquisitionCriterium Load (0.3ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id_user" = ? ORDER BY "acquisition_criteria"."created_at" DESC[0m  [["id_user", 1]]
+  ↳ app/views/user_authentication/edit_profile.html.erb:91
+  [1m[36mView Load (0.2ms)[0m  [1m[34mSELECT "views".* FROM "views" WHERE "views"."id_acquisition" = ?[0m  [["id_acquisition", 1]]
+  ↳ app/views/user_authentication/edit_profile.html.erb:114
+  Rendered user_authentication/edit_profile.html.erb within layouts/application (Duration: 16.0ms | Allocations: 7891)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 1.4ms | Allocations: 10646)
+
+
+Started GET "/messages" for 67.175.34.73 at 2022-03-04 20:49:13 +0000
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `load_current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "messages"."acquisition_id", "messages"."sender_id", "messages"."recipient_id" FROM "messages" WHERE ("messages"."sender_id" = ? OR "messages"."recipient_id" = ?) ORDER BY "messages"."created_at" DESC[0m  [["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/controllers/messages_controller.rb:18:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 3], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mAcquisitionCriterium Load (0.1ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 2], ["sender_id", 3], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE Message Load (0.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."recipient_id" = ?[0m  [["acquisition_id", 1], ["sender_id", 1], ["recipient_id", 1]]
+  ↳ app/views/messages/index.html.erb:33
+  [1m[36mCACHE AcquisitionCriterium Load (0.0ms)[0m  [1m[34mSELECT "acquisition_criteria".* FROM "acquisition_criteria" WHERE "acquisition_criteria"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/messages/index.html.erb:42
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/messages/index.html.erb:52
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."acquisition_id" = ? AND "messages"."sender_id" = ? AND "messages"."read" = ?[0m  [["acquisition_id", 1], ["sender_id", 2], ["read", 0]]
+  ↳ app/views/messages/index.html.erb:56
+  Rendered messages/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 12871)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 1.5ms | Allocations: 15732)
+
+
