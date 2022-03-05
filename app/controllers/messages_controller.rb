@@ -27,10 +27,11 @@ class MessagesController < ApplicationController
     id_sender = params.fetch("sender_id")
     id_acquisition = params.fetch("criteria_id")
 
-    matching_messages = Message.where(sender_id: id_sender).or(Message.where(recipient_id: id_sender)).where({:acquisition_id => id_acquisition})
-    matching_messages = matching_messages.where(sender_id: session.fetch(:user_id)).or(Message.where(recipient_id: session.fetch(:user_id))).where({:acquisition_id => id_acquisition})
+    matching_messages1 = Message.where(:sender_id => id_sender).where(:recipient_id => session.fetch(:user_id)).where({:acquisition_id => id_acquisition})
+    matching_messages2 = Message.where(:sender_id => session.fetch(:user_id)).where(:recipient_id => id_sender).where({:acquisition_id => id_acquisition})
+    matching_messages = matching_messages1 + matching_messages2
 
-    @list_of_messages = matching_messages.order({ :created_at => :desc })
+    @list_of_messages = matching_messages.sort_by(&:"#{:created_at}").reverse
 
     render({ :template => "messages/threads.html.erb" })
   end

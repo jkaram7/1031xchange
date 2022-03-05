@@ -59,9 +59,10 @@
 
       </tr>
       
-      
       <% @list_of_messages.each do |a_message| %>
       <tr>
+
+        <% if session.fetch(:user_id) == a_message.recipient_id || session.fetch(:user_id) == a_message.sender_id %>
 
         <td>
           <%= a_message.sender.name %>
@@ -80,6 +81,8 @@
         <% if the_message.recipient.id == session.fetch(:user_id) %>
         <%the_message.read = true%>
         <%the_message.save%>
+        <%end%>
+
         <%end%>
 
       </tr>

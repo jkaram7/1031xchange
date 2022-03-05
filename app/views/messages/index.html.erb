@@ -57,13 +57,13 @@
 
           <%if newmsgs > 0 %>
           
-          <a href="/messages/<%= a_thread.fetch(0) %>/ <%= senderuser %>" class="button3">
+          <a href="/messages/<%= a_thread.fetch(0) %>/<%= senderuser %>" class="button3">
             <%= newmsgs%>  new messages
           </a>
 
           <%else%>
 
-          <a href="/messages/<%= a_thread.fetch(0) %>/ <%= senderuser %>" class="button2">
+          <a href="/messages/<%= a_thread.fetch(0) %>/<%= senderuser %>" class="button2">
             <%= newmsgs%>  new messages
           </a>
           
