@@ -7,7 +7,7 @@
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="/my_styles2.css">
+    <link rel="stylesheet" href="/my_styles3.css">
 
     <!-- Make it responsive to small screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,9 +18,9 @@
 
   </head>
 
-  <body>
+  <body class="full-width">
 
-    <nav>
+    <nav class="navbar-inverse">
 
       <div class="row">
       <% if session.fetch(:user_id) == nil %>
@@ -71,13 +71,18 @@
         <% end %>
       </div>
 
+       </nav>
+
 <hr>
 <img src="https://www.ashleypetersonlaw.com/wp-content/uploads/2018/08/1031-Exchange-from-rental-home.jpg" width="100" height="100">
     
-    <p><%= notice %> </p>
-    <p><%= alert %> </p>
-
-    </nav>
+    <% if notice != nil%>
+    <p class="alert-success"><%= notice %> </p>
+    <%end%>
+    <% if alert != nil%>
+    <p class="alert"><%= alert %> </p>
+    <%end%>
+   
 
 
     <%= yield %>

@@ -139,15 +139,15 @@
         </th>
 
         <th>
-          Location
+          Loc.
         </th>
 
         <th>
-          Trade Size
+          Trade Size ($MM)
         </th>
 
         <th>
-          Occupancy
+          Occup.
         </th>
 
         <th>
@@ -179,7 +179,7 @@
         </td>
 
         <td>
-          <%= a_criteria.trade_size %>
+          <%= (a_criteria.trade_size.to_f/1000000).round(2) %> 
         </td>
 
         <td>

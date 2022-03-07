@@ -21,8 +21,8 @@
 
       <% if @list_of_messages.length > 0 %>
 
-      <div>
-          You are already connected! Check your messages.
+      <div class = "alert-success">
+          You are already connected with this user! Check your messages.
       </div>
 
       <%else%>
@@ -68,42 +68,6 @@
       <th>
         Notes
       </th>
-      
-      <th>
-        Cap rate min
-      </th>
-
-      <th>
-        Cap rate max
-      </th>
-
-      <th>
-        Property sub type
-      </th>
-
-      <th>
-        Occupancy
-      </th>
-      
-      <th>
-        Return profile
-      </th>
-      
-      <th>
-        Preferred tenant
-      </th>
-
-      <th>
-        Sq feet
-      </th>
-
-      <th>
-        Created at
-      </th>
-
-      <th>
-        Updated at
-      </th>
 
       </tr>
 
@@ -136,6 +100,55 @@
       <td>
         <%= @the_acquisition_criterium.notes %>
       </td>
+
+      </tr>
+
+      </table>
+  </div>
+</div>
+
+<div>
+    <div>
+    <table class="styled-table">
+      <tr>
+
+    <tr>
+     
+      <th>
+        Cap rate min
+      </th>
+
+      <th>
+        Cap rate max
+      </th>
+
+      <th>
+        Property sub type
+      </th>
+
+      <th>
+        Occup.
+      </th>
+      
+      <th>
+        Return profile
+      </th>
+      
+      <th>
+        Preferred tenant
+      </th>
+
+      <th>
+        Sq feet
+      </th>
+
+      <th>
+        Created at
+      </th>
+
+      </tr>
+
+      <tr>
 
       
       <td>
@@ -175,10 +188,6 @@
       
       <td>
         <%= time_ago_in_words(@the_acquisition_criterium.created_at) %> ago
-      </td>
-
-      <td>
-        <%= time_ago_in_words(@the_acquisition_criterium.updated_at) %> ago
       </td>
 
       </tr>
