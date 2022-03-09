@@ -149,8 +149,8 @@
 <% end %>
 
 <div>
-  <div>
-    <table class="styled-table">
+  <div class="table-responsive">
+    <table class="table">
       <tr>
 
         <th>
@@ -163,14 +163,6 @@
 
         <th>
           Trade Size ($MM)
-        </th>
-
-        <th>
-          Occup.
-        </th>
-
-        <th>
-          Sq. Feet
         </th>
 
         <th>
@@ -194,23 +186,15 @@
         </td>
 
         <td>
-          <%= a_criteria.location %>
+          <%=a_criteria.location[0,10] + "."%>
         </td>
 
         <td>
-          <%= (a_criteria.trade_size.to_f/1000000).round(2) %> 
+          <%= number_to_currency((a_criteria.trade_size.to_f/1000000).round(2)).to_s[0,6] %> 
         </td>
 
         <td>
-          <%= a_criteria.occupancy %>
-        </td>
-
-        <td>
-          <%= a_criteria.sq_feet %>
-        </td>
-
-        <td>
-          <%= a_criteria.views.length %>
+          <%= a_criteria.views.length.to_s[0,5] %>
         </td>
 
         <td>

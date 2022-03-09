@@ -38,166 +38,139 @@
       <%end%>
 
     </div>
-    
-    <div>
-    <div>
-    <table class="styled-table">
-      <tr>
 
-    <tr>
-      <th>
-        Period end date
-      </th>
 
-      <th>
-        Product type
-      </th>
 
-      <th>
-        Location
-      </th>
 
-      <th>
-        Trade size
-      </th>
-      
-      <th>
-        User name
-      </th>
+    <div class="container">
 
-      <th>
-        Notes
-      </th>
+    <div class = "row border">
 
-      </tr>
-
-      <tr>
-      <td>
-        <%= @the_acquisition_criterium.period_end_date %>
-      </td>
-
-      
-      <td>
+      <div class="col-sm" >
+        Period end date:
+      </div>
+<div class="col-sm">
+        <%= @the_acquisition_criterium.period_end_date.strftime("%m/%d/%Y") %>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Product type:
+      </div>
+<div class="col-sm">
         <%= @the_acquisition_criterium.product_type %>
-      </td>
-
-      
-      <td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Location:
+      </div>
+      <div class="col-sm">
         <%= @the_acquisition_criterium.location %>
-      </td>
-
-      
-      <td>
-        <%= @the_acquisition_criterium.trade_size %>
-      </td>
-
-      
-      <td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Trade size:
+      </div>
+      <div class="col-sm">
+        <%= number_to_currency(@the_acquisition_criterium.trade_size) %>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        User name:
+      </div>
+<div class="col-sm">
         <%= @the_acquisition_criterium.user.name %>
-      </td>
-
-      
-      <td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Notes:
+      </div>
+    <div class="col-sm">
         <%= @the_acquisition_criterium.notes %>
-      </td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Cap rate min:
+      </div>
+<div class="col-sm">
+        <%= number_to_currency(@the_acquisition_criterium.cap_rate_min) %>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Cap rate max:
+      </div>
+<div class="col-sm">
+        <%= number_to_currency(@the_acquisition_criterium.cap_rate_max) %>
+      </div>
 
-      </tr>
-
-      </table>
-  </div>
-</div>
-
-<div>
-    <div>
-    <table class="styled-table">
-      <tr>
-
-    <tr>
-     
-      <th>
-        Cap rate min
-      </th>
-
-      <th>
-        Cap rate max
-      </th>
-
-      <th>
-        Property sub type
-      </th>
-
-      <th>
-        Occup.
-      </th>
-      
-      <th>
-        Return profile
-      </th>
-      
-      <th>
-        Preferred tenant
-      </th>
-
-      <th>
-        Sq feet
-      </th>
-
-      <th>
-        Created at
-      </th>
-
-      </tr>
-
-      <tr>
-
-      
-      <td>
-        <%= @the_acquisition_criterium.cap_rate_min %>
-      </td>
-
-      
-      <td>
-        <%= @the_acquisition_criterium.cap_rate_max %>
-      </td>
-
-      
-      <td>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Property sub type:
+      </div>
+    <div class="col-sm">
         <%= @the_acquisition_criterium.property_sub_type %>
-      </td>
-
-      
-      <td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Occupancy:
+      </div>
+      <div class="col-sm">
         <%= @the_acquisition_criterium.occupancy %>
-      </td>
-
-      
-      <td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Return profile:
+      </div>
+    <div class="col-sm">
         <%= @the_acquisition_criterium.return_profile %>
-      </td>
-
-      
-      <td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Preferred tenant:
+      </div>
+<div class="col-sm">
         <%= @the_acquisition_criterium.preferred_tenant %>
-      </td>
-
-      
-      <td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Sq feet:
+      </div>
+<div class="col-sm">
         <%= @the_acquisition_criterium.sq_feet %>
-      </td>
-
-      
-      <td>
+      </div>
+    </div>
+    <div class= "row border">
+      <div class="col-sm">
+        Created at:
+      </div>
+    <div class="col-sm">
         <%= time_ago_in_words(@the_acquisition_criterium.created_at) %> ago
-      </td>
+      </div>
+    </div>
 
-      </tr>
+    <div class= "row border">
+      <div class="col-sm">
+        Updated at:
+      </div>
+    <div class="col-sm">
+        <%= time_ago_in_words(@the_acquisition_criterium.updated_at) %> ago
+      </div>
+    </div>
+      
 
-      </table>
   </div>
-</div>
 
-  </div>
-</div>
 
 <% if session.fetch(:user_id) == @the_acquisition_criterium.user.id %>
 

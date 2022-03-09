@@ -10,6 +10,9 @@
 
 <div>
   <div>
+    <a href="/acquisition_criteria/<%=params.fetch("criteria_id")%>" class="btn btn-success">
+            View criteria post
+    </a>
     <h2>
       Add a new message
     </h2>
@@ -23,14 +26,16 @@
 
         <textarea class="form-control" placeholder="Message" id="content_box" name="query_content" rows="3"></textarea>
       </div>
+      </div>
       <div class="col">
         <input id="acquisition_id" name="a_id" value= <%=params.fetch("criteria_id")%> type="hidden" ></input>
       </div>
 
       <div class="col">
         <input id="recipient_id" name="rec_id" value= <%=params.fetch("sender_id")%> type="hidden" ></input>
+      
       </div>
-      </div>
+      
       <button class="btn btn-primary">
         Send message
       </button>
@@ -41,8 +46,8 @@
 
 <hr>
 <div>
-  <div>
-    <table class="styled-table">
+  <div class="table-responsive">
+    <table class="table">
       <tr>
         <th>
           Sender
