@@ -152,7 +152,10 @@
   <div class="table-responsive">
     <table class="table">
       <tr>
-
+        <th>
+          
+        </th>
+        
         <th>
           Product Type
         </th>
@@ -173,14 +176,18 @@
           Posted
         </th>
 
-        <th>
-          
-        </th>
+        
 
       </tr>
 
       <% @list_of_acquisition_criteria.each do |a_criteria| %>
       <tr>
+        <td>
+          <a href="/acquisition_criteria/<%= a_criteria.id %>" class="btn btn-success">
+            View
+          </a>
+        </td>
+
         <td>
           <%= a_criteria.product_type %>
         </td>
@@ -201,11 +208,7 @@
           <%= time_ago_in_words(a_criteria.created_at) %>
         </td>
 
-        <td>
-          <a href="/acquisition_criteria/<%= a_criteria.id %>" class="btn btn-success">
-            View
-          </a>
-        </td>
+        
 
       </tr>
       <% end %>
