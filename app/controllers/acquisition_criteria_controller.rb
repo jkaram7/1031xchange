@@ -72,10 +72,9 @@ class AcquisitionCriteriaController < ApplicationController
     the_acquisition_criterium.product_type = params.fetch("query_product_type")
     the_acquisition_criterium.location = params.fetch("query_location")
     the_acquisition_criterium.trade_size = params.fetch("query_trade_size")
-    the_acquisition_criterium.id_user = params.fetch("query_id_user")
+    the_acquisition_criterium.id_user = session.fetch(:user_id)
     the_acquisition_criterium.notes = params.fetch("query_notes")
-    the_acquisition_criterium.active = params.fetch("query_active", false)
-    the_acquisition_criterium.priority = params.fetch("query_priority")
+    the_acquisition_criterium.active = true
     the_acquisition_criterium.cap_rate_min = params.fetch("query_cap_rate_min")
     the_acquisition_criterium.cap_rate_max = params.fetch("query_cap_rate_max")
     the_acquisition_criterium.property_sub_type = params.fetch("query_property_sub_type")

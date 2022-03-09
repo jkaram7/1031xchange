@@ -12,116 +12,135 @@
 
 <div>
   <div>
+    
 
     <form action="/insert_acquisition_criterium" method="post">
-     <table border="0">
-      <tr>
 
-        <th>
+      <div  class="row">
 
-      <div>
+      <div class="col">
         <label for="period_end_date_box">
-          Period end date
+          
         </label>
 
-        <input type="datetime-local" id="period_end_date_box" name="query_period_end_date">
+        <input class="form-control" placeholder="Period end date" type="datetime-local" id="period_end_date_box" name="query_period_end_date">
       </div>
 
-      <div>
-        <label for="product_type_box">
-          Product type
-        </label>
-
-        <input type="text" id="product_type_box" name="query_product_type">
-      </div>
-
-      <div>
-        <label for="location_box">
-          Location
-        </label>
-
-        <input type="text" id="location_box" name="query_location">
-      </div>
-
-      <div>
-        <label for="trade_size_box">
-          Trade size
-        </label>
-
-        <input type="text" id="trade_size_box" name="query_trade_size">
-      </div>
-
-      <div>
-        <label for="notes_box">
-          Notes
-        </label>
-
-        <textarea id="notes_box" name="query_notes" rows="3"></textarea>
-      </div>
-      </th>
-      <th>
-
-      <div>
+      <div class="col">
         <label for="cap_rate_min_box">
-          Cap rate min
+          
         </label>
 
-        <input type="text" id="cap_rate_min_box" name="query_cap_rate_min">
+        <input class="form-control" placeholder="Cap rate min" type="text" id="cap_rate_min_box" name="query_cap_rate_min">
+      </div>
+      
+      </div>
+      
+      <div  class="row">
+
+      <div class="col">
+        <label for="product_type_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Product type" type="text" id="product_type_box" name="query_product_type">
       </div>
 
-      <div>
+      <div class="col">
         <label for="cap_rate_max_box">
-          Cap rate max
+          
         </label>
 
-        <input type="text" id="cap_rate_max_box" name="query_cap_rate_max">
+        <input class="form-control" placeholder="Cap rate max" type="text" id="cap_rate_max_box" name="query_cap_rate_max">
       </div>
 
-      <div>
+      </div>
+
+      <div  class="row">
+
+      <div class="col">
+        <label for="location_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Location" type="text" id="location_box" name="query_location">
+      </div>
+
+      <div class="col">
         <label for="property_sub_type_box">
-          Property sub type
+          
         </label>
 
-        <input type="text" id="property_sub_type_box" name="query_property_sub_type">
+        <input class="form-control" placeholder="Property sub type" type="text" id="property_sub_type_box" name="query_property_sub_type">
+      </div>
+      
       </div>
 
-      <div>
+      <div  class="row">
+
+      <div class="col">
+        <label for="trade_size_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Trade size" type="text" id="trade_size_box" name="query_trade_size">
+      </div>
+
+      <div class="col">
         <label for="occupancy_box">
-          Occupancy
+          
         </label>
 
-        <input type="text" id="occupancy_box" name="query_occupancy">
+        <input class="form-control" placeholder="Occupancy" type="text" id="occupancy_box" name="query_occupancy">
+      </div>
+      
       </div>
 
-      <div>
+      <div  class="row">
+
+      <div class="col">
+        <label for="notes_box">
+          
+        </label>
+
+        <textarea class="form-control" placeholder="Notes" id="notes_box" name="query_notes" rows="3"></textarea>
+      </div>
+
+      <div class="col">
         <label for="return_profile_box">
-          Return profile
+          
         </label>
 
-        <input type="text" id="return_profile_box" name="query_return_profile">
+        <input class="form-control" placeholder="Return profile" type="text" id="return_profile_box" name="query_return_profile">
+      </div>
       </div>
 
-      <div>
-        <label for="preferred_tenant_box">
-          Preferred tenant
-        </label>
+      <div  class="row">
 
-        <input type="text" id="preferred_tenant_box" name="query_preferred_tenant">
-      </div>
-
-      <div>
+      <div class="col">
         <label for="sq_feet_box">
-          Sq feet
+          
         </label>
 
-        <input type="text" id="sq_feet_box" name="query_sq_feet">
+        <input class="form-control" placeholder="Sq feet" type="text" id="sq_feet_box" name="query_sq_feet">
       </div>
-      </th>
-      </table>
-      <button class="button2" >
+      
+      <div class="col">
+        <label for="preferred_tenant_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Preferred tenant" type="text" id="preferred_tenant_box" name="query_preferred_tenant">
+      </div>
+
+      
+      </div>
+
+      <button class="btn btn-primary" >
         Create acquisition criterium
       </button>
     </form>
+
   </div>
 </div>
 
@@ -199,7 +218,7 @@
         </td>
 
         <td>
-          <a href="/acquisition_criteria/<%= a_criteria.id %>" class="button3" padding="5px">
+          <a href="/acquisition_criteria/<%= a_criteria.id %>" class="btn btn-success">
             View
           </a>
         </td>

@@ -8,45 +8,71 @@
   <hr>
   <div>
     <form action="/modify_user" method="post">
-      <div>
-        <label for="email_box">Email</label>
-        <input id="email_box" name="query_email" value="<%= @current_user.email %>">
-      </div>
-      <div>
-        <label for="name_box">Name</label>
-        <input id="name_box" name="query_name" value="<%= @current_user.name %>">
-      </div>
-      <div>
-        <label for="company_name_box">Company name</label>
-        <input id="company_name_box" name="query_company_name" value="<%= @current_user.company_name %>">
-      </div>
-      <div>
-        <label for="phone_number_box">Phone number</label>
-        <input id="phone_number_box" name="query_phone_number" value="<%= @current_user.phone_number %>">
-      </div>
-      <div>
-        <label for="role_box">Role</label>
-        <input id="role_box" name="query_role" value="<%= @current_user.role %>">
-      </div>
 
-      <div>
-        <label for="password_box">Password</label>
-        <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
-      </div>
-    
-      <div>
-        <label for="password_confirmation_box">Password Confirmation</label>
-        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
-      </div>
+  <div class="row">
+  <div class="col">
+    <label for="email_box"></label>
+    <input class="form-control" placeholder="Email" id="email_box" name="query_email" type="text" value="<%= @current_user.email %>">
+  </div>
 
-      <button class="button2" >
-        Update account
-      </button>
-    </form>
+  <div class="col">
+    <label for="name_box"></label>
+      
+    <input class="form-control" placeholder="Full name" type="text" id="name_box" name="query_name" value="<%= @current_user.name %>">
+  </div>
+
+  </div>
+
+  <div class="row">
+  <div class="col">
+    <label for="password_box"></label>
+    <input class="form-control" placeholder="Password" id="password_box" name="query_password" type="password">
+  </div>
+
+  <div class="col">
+    <label for="company_name_box"></label>
+      
+    <input class="form-control" placeholder="Company name" type="text" id="company_name_box" name="query_company_name" value="<%= @current_user.company_name %>">
+  </div>
+
+  </div>
+
+  <div class="row">
+  <div class="col">
+    <label for="password_confirmation_box"></label>
+    <input class="form-control" placeholder="Confirm password" id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+  </div>
+         
+         
+  <div class="col">
+    <label for="phone_number_box"></label>
+      
+    <input class="form-control" placeholder="Phone number" type="text" id="phone_number_box" name="query_phone_number" value="<%= @current_user.phone_number %>">
+  </div>
+
+  </div>
+  
+  <div class="row">
+  <div class="col">
+  </div>
+  <div class="col">
+    <label for="role_box"></label>
+      
+    <input class="form-control" placeholder="Role" type="text" id="role_box" name="query_role" value="<%= @current_user.role %>">
+  </div>
+  
+  </div>
+  
+
+  <button class="btn btn-primary">
+    Update account
+  </button>
+</form>
+
   </div>
   <hr>
   <h5>
-    My posts
+    My active posts
   </h5>
   
   <div>
@@ -119,7 +145,7 @@
         </td>
 
         <td>
-          <a href="/acquisition_criteria/<%= a_criteria.id %>" class="button3" padding="5px">
+          <a href="/acquisition_criteria/<%= a_criteria.id %>" class="btn btn-success">
             View
           </a>
         </td>

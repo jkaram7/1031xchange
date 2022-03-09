@@ -9,9 +9,15 @@
 
     <link rel="stylesheet" href="/my_styles3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+    <!-- Connect Bootstrap JavaScript and its dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
     <!-- Make it responsive to small screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -21,69 +27,75 @@
 
   <body>
 
-    <nav class="nav nav-pills">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">1031xchange</a>
 
+</nav>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
+    <div class="container">
+      
       <% if session.fetch(:user_id) == nil %>
+
         <div>
-          <a class="button" href="/">
-            Home
+          <a class="btn btn-light" href="/">
+            <i class="fas fa-home"></i>
           </a>
         </div>
 
         <div>
-          <a class="button" href="/user_sign_up">
-            Sign up
+          <a class="btn btn-light" href="/user_sign_up">
+            <i class="fas fa-user-plus"></i>
           </a>
         </div>
 
         <div>
-          <a class="button" href="/user_sign_in">
-            Sign in
+          <a class="btn btn-light" href="/user_sign_in">
+            <i class="fas fa-user"></i>
           </a>
         </div>
 
         <% else %>
 
           <div>
-          <a class="button" href="/">
-            Home
+          <a class="btn btn-light" href="/">
+            <i class="fas fa-home"></i>
           </a>
         </div>
 
         <div>
-          <a class="button" href="/messages">
-            Messages
+          <a class="btn btn-light" href="/messages">
+            <i class="fas fa-envelope"></i>
           </a>
         </div>
 
         <div>
-          <a class="button" href="/edit_user_profile">
-            My profile
+          <a class="btn btn-light" href="/edit_user_profile">
+            <i class="fas fa-user"></i>
           </a>
         </div>
 
         <div>
-          <a class="button" href="/user_sign_out">
-            Sign out
+          <a class="btn btn-light" href="/user_sign_out">
+            <i class="fas fa-sign-in-alt"></i>
           </a>
         </div>
 
         <% end %>
-
+        </div>
        </nav>
 
 <hr>
-<img src="https://www.ashleypetersonlaw.com/wp-content/uploads/2018/08/1031-Exchange-from-rental-home.jpg" width="100" height="100">
-    
+
     <% if notice != nil%>
-    <p class="alert-success"><%= notice %> </p>
+    <p class="alert alert-success"><%= notice %> </p>
     <%end%>
     <% if alert != nil%>
-    <p class="alert"><%= alert %> </p>
+    <p class="alert alert-danger"><%= alert %> </p>
     <%end%>
    
 
-
     <%= yield %>
+    
   </body>
 </html>
