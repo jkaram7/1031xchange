@@ -50,10 +50,10 @@ class ViewsController < ApplicationController
   end
 
   def destroy
-    the_id = params.fetch("path_id")
-    the_view = View.where({ :id => the_id }).at(0)
+    #the_id = params.fetch("path_id")
+    #the_view = View.where({ :id => the_id }).at(0)
 
-    the_view.destroy
+    #the_view.destroy
 
     redirect_to("/views", { :notice => "View deleted successfully."} )
   end

@@ -2,6 +2,16 @@ class MessagesController < ApplicationController
 
   def connection
 
+    the_id = session.fetch(:user_id)
+    the_view = View.where({ :id_viewer  => the_id }).order({ :created_at => :desc }).at(0)
+
+    the_view.clicked = true
+
+    if the_view.valid?
+      the_view.save
+    else
+    end
+
     render({ :template => "messages/new.html.erb" })
   end
 
@@ -63,6 +73,33 @@ class MessagesController < ApplicationController
     end
   end
 
+  def create_new
+
+    the_id = session.fetch(:user_id)
+    the_view = View.where({ :id_viewer  => the_id }).order({ :created_at => :desc }).at(0)
+
+    the_view.potential_lead = true
+
+    if the_view.valid?
+      the_view.save
+    else
+    end
+
+    the_message = Message.new
+    the_message.sender_id = session.fetch(:user_id)
+    the_message.recipient_id = params.fetch("rec_id")
+    the_message.content = params.fetch("query_content")
+    the_message.read = false
+    the_message.acquisition_id = params.fetch("a_id")
+
+    if the_message.valid?
+      the_message.save
+      redirect_to("/messages", { :notice => "Message sent successfully." })
+    else
+      redirect_to("/messages", { :notice => "Message failed to send." })
+    end
+  end
+
   def createThread
 
     the_message = Message.new
@@ -99,10 +136,10 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    the_id = params.fetch("path_id")
-    the_message = Message.where({ :id => the_id }).at(0)
+    #the_id = params.fetch("path_id")
+    #the_message = Message.where({ :id => the_id }).at(0)
 
-    the_message.destroy
+    #the_message.destroy
 
     redirect_to("/messages", { :notice => "Message deleted successfully."} )
   end

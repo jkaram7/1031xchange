@@ -27,6 +27,13 @@
   z-index: 100;
 }
 
+.navlock{
+  background-color:#e8ffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .full-width {
   width: 96vw;
 }

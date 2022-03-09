@@ -2,7 +2,7 @@ class AcquisitionCriteriaController < ApplicationController
   def index
     matching_acquisition_criteria = AcquisitionCriterium.all
 
-    @list_of_acquisition_criteria = matching_acquisition_criteria.order({ :created_at => :desc })
+    @list_of_acquisition_criteria = matching_acquisition_criteria.where({:active => true}).order({ :created_at => :desc })
 
     render({ :template => "acquisition_criteria/index.html.erb" })
   end
@@ -31,7 +31,7 @@ class AcquisitionCriteriaController < ApplicationController
     #now show criteria
     the_id = params.fetch("path_id")
 
-    matching_acquisition_criteria = AcquisitionCriterium.where({ :id => the_id })
+    matching_acquisition_criteria = AcquisitionCriterium.where({ :id => the_id }).where({:active => true})
 
     @the_acquisition_criterium = matching_acquisition_criteria.at(0)
 
@@ -96,7 +96,8 @@ class AcquisitionCriteriaController < ApplicationController
     the_id = params.fetch("path_id")
     the_acquisition_criterium = AcquisitionCriterium.where({ :id => the_id }).at(0)
 
-    the_acquisition_criterium.destroy
+    the_acquisition_criterium.active = false
+    the_acquisition_criterium.save
 
     redirect_to("/acquisition_criteria", { :notice => "Acquisition criterium deleted successfully."} )
   end
