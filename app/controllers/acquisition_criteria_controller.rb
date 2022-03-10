@@ -32,74 +32,95 @@ class AcquisitionCriteriaController < ApplicationController
     filter_sqfts = params.fetch("filter_sqfts")
     filter_sqftl = params.fetch("filter_sqftl")
 
-    sort_criteria = params.fetch("sort_criteria")
+    sort_by = params.fetch("sort_by", false)
+    asc = params.fetch("asc", false)
+
+    sort_criteria = 0
+
+    if sort_by == "Type"
+      sort_criteria = 1
+    elsif sort_by == "Loc."
+      sort_criteria = 3
+    elsif sort_by == "Size"
+      sort_criteria = 5
+    elsif sort_by == "Posted"
+      sort_criteria = 7
+    end
+
+    if sort_criteria != 0
+      if asc == true
+        sort_criteria = sort_criteria + 1
+      end
+    end
+
 
     @list_of_acquisition_criteria = matching_acquisition_criteria.where({:active => true}).order({ :created_at => :desc })
 
-    if filter_dates != "naa"
+    if filter_dates != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("period_end_date > ?", filter_dates)
     end
 
-    if filter_datel != "naa"
+    if filter_datel != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("period_end_date < ?", filter_datel)
     end
 
-    if filter_type != "naa"
+    if filter_type != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:product_type => filter_type})
     end
 
-    if filter_location != "naa"
+    if filter_location != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:location => filter_location})
     end
 
-    if filter_sizes != "naa"
+    if filter_sizes != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("trade_size > ?", filter_sizes)
     end
 
-    if filter_sizel != "naa"
+    if filter_sizel != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("trade_size < ?", filter_sizel)
     end
 
-    if filter_mins != "naa"
+    if filter_mins != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("cap_rate_min > ?", filter_mins)
     end
 
-    if filter_minl != "naa"
+    if filter_minl != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("cap_rate_min < ?", filter_minl)
     end
 
-    if filter_maxs != "naa"
+    if filter_maxs != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("cap_rate_max > ?", filter_maxs)
     end
 
-    if filter_maxl != "naa"
+    if filter_maxl != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("cap_rate_max < ?", filter_maxl)
     end
 
-    if filter_subtype != "naa"
+    if filter_subtype != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:property_sub_type => filter_subtype})
     end
 
-    if filter_occupancy != "naa"
+    if filter_occupancy != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:occupancy => filter_occupancy})
     end
 
-    if filter_profile != "naa"
+    if filter_profile != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:return_profile => filter_profile})
     end
 
-    if filter_tenant != "naa"
+    if filter_tenant != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:preferred_tenant => filter_tenant})
     end
 
-    if filter_sqfts != "naa"
+    if filter_sqfts != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("sq_feet > ?", filter_sqfts)
     end
 
-    if filter_sqftl != "naa"
+    if filter_sqftl != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("sq_feet < ?", filter_sqftl)
     end
 
+    if sort_criteria != ""
     if sort_criteria == 1
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :product_type => :desc })
     elsif sort_criteria == 2
@@ -116,6 +137,7 @@ class AcquisitionCriteriaController < ApplicationController
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :created_at => :asc })
     elsif sort_criteria == 8
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :created_at => :asc })
+    end
     end
 
     render({ :template => "acquisition_criteria/index.html.erb" })

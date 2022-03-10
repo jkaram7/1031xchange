@@ -1,27 +1,27 @@
 
+<form action="/filtered" method="post">
+
 <div>
 Sort by:
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+ <div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline1" name="sort_by" class="custom-control-input">
   <label class="custom-control-label" for="customRadioInline1">Type</label>
-  <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+  <input type="radio" id="customRadioInline2" name="sort_by" class="custom-control-input">
   <label class="custom-control-label" for="customRadioInline2">Loc.</label>
-  <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline1">Size</label>
-
-  <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
-  <label class="custom-control-label" for="customRadioInline2">Posted</label>
+  <input type="radio" id="customRadioInline3" name="sort_by" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline3">Size</label>
+  <input type="radio" id="customRadioInline4" name="sort_by" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline4">Posted</label>
+</div>
   <div>
-  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <input type="checkbox" class="custom-control-input" id="customCheck1" name="asc">
   <label class="custom-control-label" for="customCheck1">asc.</label>
   </div>
 </div>
 </div>
 
 <div>
-    
-
-    <form action="/filter" method="post">
+  
 
       <div  class="row">
 
