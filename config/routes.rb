@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   # homepage
   get("/", { :controller => "acquisition_criteria", :action => "index" })
 
+   # homepage
+   get("/filter", { :controller => "acquisition_criteria", :action => "filter" })
+
+  # homepage sorted
+  post("/filtered", { :controller => "acquisition_criteria", :action => "index_sort_filter" })
+  post("/:sort_criteria/:filter_dates/:filter_datel/:filter_type/:filter_location/:filter_sizes/:filter_sizel/:filter_mins/:filter_minl/:filter_maxs/:filter_maxl/:filter_subtype/:filter_occupancy/:filter_profile/:filter_tenant/:filter_sqfts/:filter_sqftl", { :controller => "acquisition_criteria", :action => "index_sort_filter" })
+
   # create connection
   get("/connect/:path_id", { :controller => "messages", :action => "connection" })
 

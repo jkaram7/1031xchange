@@ -1,8 +1,122 @@
 class AcquisitionCriteriaController < ApplicationController
+  def filter
+
+    render({ :template => "acquisition_criteria/filter.html.erb" })
+  end
+  
   def index
     matching_acquisition_criteria = AcquisitionCriterium.all
 
     @list_of_acquisition_criteria = matching_acquisition_criteria.where({:active => true}).order({ :created_at => :desc })
+
+    render({ :template => "acquisition_criteria/index.html.erb" })
+  end
+
+  def index_sort_filter
+    matching_acquisition_criteria = AcquisitionCriterium.all
+    
+    filter_dates = params.fetch("filter_dates")
+    filter_datel = params.fetch("filter_datel")
+    filter_type = params.fetch("filter_type")
+    filter_location = params.fetch("filter_location")
+    filter_sizes = params.fetch("filter_sizes")
+    filter_sizel = params.fetch("filter_sizel")
+    filter_mins = params.fetch("filter_mins")
+    filter_minl = params.fetch("filter_minl")
+    filter_maxs = params.fetch("filter_maxs")
+    filter_maxl = params.fetch("filter_maxl")
+    filter_subtype = params.fetch("filter_subtype")
+    filter_occupancy = params.fetch("filter_occupancy")
+    filter_profile = params.fetch("filter_profile")
+    filter_tenant = params.fetch("filter_tenant")
+    filter_sqfts = params.fetch("filter_sqfts")
+    filter_sqftl = params.fetch("filter_sqftl")
+
+    sort_criteria = params.fetch("sort_criteria")
+
+    @list_of_acquisition_criteria = matching_acquisition_criteria.where({:active => true}).order({ :created_at => :desc })
+
+    if filter_dates != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("period_end_date > ?", filter_dates)
+    end
+
+    if filter_datel != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("period_end_date < ?", filter_datel)
+    end
+
+    if filter_type != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:product_type => filter_type})
+    end
+
+    if filter_location != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:location => filter_location})
+    end
+
+    if filter_sizes != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("trade_size > ?", filter_sizes)
+    end
+
+    if filter_sizel != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("trade_size < ?", filter_sizel)
+    end
+
+    if filter_mins != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("cap_rate_min > ?", filter_mins)
+    end
+
+    if filter_minl != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("cap_rate_min < ?", filter_minl)
+    end
+
+    if filter_maxs != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("cap_rate_max > ?", filter_maxs)
+    end
+
+    if filter_maxl != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("cap_rate_max < ?", filter_maxl)
+    end
+
+    if filter_subtype != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:property_sub_type => filter_subtype})
+    end
+
+    if filter_occupancy != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:occupancy => filter_occupancy})
+    end
+
+    if filter_profile != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:return_profile => filter_profile})
+    end
+
+    if filter_tenant != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:preferred_tenant => filter_tenant})
+    end
+
+    if filter_sqfts != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("sq_feet > ?", filter_sqfts)
+    end
+
+    if filter_sqftl != "naa"
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("sq_feet < ?", filter_sqftl)
+    end
+
+    if sort_criteria == 1
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :product_type => :desc })
+    elsif sort_criteria == 2
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :product_type => :asc })
+    elsif sort_criteria == 3
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :location => :asc })
+    elsif sort_criteria == 4
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :location => :asc })
+    elsif sort_criteria == 5
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :trade_size => :desc })
+    elsif sort_criteria == 6
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :trade_size => :asc })
+    elsif sort_criteria == 7
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :created_at => :asc })
+    elsif sort_criteria == 8
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :created_at => :asc })
+    end
 
     render({ :template => "acquisition_criteria/index.html.erb" })
   end

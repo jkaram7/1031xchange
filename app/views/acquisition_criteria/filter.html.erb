@@ -1,0 +1,193 @@
+
+<div>
+Sort by:
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline1">Type</label>
+  <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline2">Loc.</label>
+  <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline1">Size</label>
+
+  <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline2">Posted</label>
+  <div>
+  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1">asc.</label>
+  </div>
+</div>
+</div>
+
+<div>
+    
+
+    <form action="/filter" method="post">
+
+      <div  class="row">
+
+      <div class="col">
+        <label for="period_end_date_box1">
+          Date >
+        </label>
+
+        <input class="form-control" placeholder="Period end date" type="datetime-local" id="period_end_date_box1" name="filter_dates">
+      </div>
+
+      <div class="col">
+        <label for="period_end_date_box2">
+          Date <
+        </label>
+
+        <input class="form-control" placeholder="Period end date" type="datetime-local" id="period_end_date_box2" name="filter_datel">
+      </div>
+      </div>
+
+      <div  class="row">
+
+      <div class="col">
+        <label for="trade_size_box1">
+          
+        </label>
+
+        <input class="form-control" placeholder="Trade size >" type="text" id="trade_size_box1" name="filter_sizes">
+      </div>
+
+      <div class="col">
+        <label for="trade_size_box2">
+          
+        </label>
+
+        <input class="form-control" placeholder="Trade size <" type="text" id="trade_size_box2" name="filter_sizel">
+      </div>
+      
+      </div>
+
+      <div  class="row">
+      <div class="col">
+        <label for="cap_rate_min_box1">
+          
+        </label>
+
+        <input class="form-control" placeholder="Cap rate min >" type="text" id="cap_rate_min_box1" name="filter_mins">
+      </div>
+
+      <div class="col">
+        <label for="cap_rate_min_box2">
+          
+        </label>
+
+        <input class="form-control" placeholder="Cap rate min <" type="text" id="cap_rate_min_box2" name="filter_minl">
+      </div>
+      
+      </div>
+      
+      <div  class="row">
+
+
+      <div class="col">
+        <label for="cap_rate_max_box1">
+          
+        </label>
+
+        <input class="form-control" placeholder="Cap rate max >" type="text" id="cap_rate_max_box1" name="filter_maxs">
+      </div>
+
+      <div class="col">
+        <label for="cap_rate_max_box2">
+          
+        </label>
+
+        <input class="form-control" placeholder="Cap rate max <" type="text" id="cap_rate_max_box2" name="filter_maxl">
+      </div>
+
+      </div>
+      
+      <div  class="row">
+
+      <div class="col">
+        <label for="sq_feet_box1">
+          
+        </label>
+
+        <input class="form-control" placeholder="Sq feet >" type="text" id="sq_feet_box1" name="filter_sqfts">
+      </div>
+
+      <div class="col">
+        <label for="sq_feet_box2">
+          
+        </label>
+
+        <input class="form-control" placeholder="Sq feet <" type="text" id="sq_feet_box2" name="filter_sqftl">
+      </div>
+
+      </div>
+
+      <div  class="row">
+
+      <div class="col">
+        <label for="product_type_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Product type" type="text" id="product_type_box" name="filter_type">
+      </div>
+
+      <div class="col">
+        <label for="return_profile_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Return profile" type="text" id="return_profile_box" name="filter_profile">
+      </div>
+      </div>
+
+      <div  class="row">
+
+      <div class="col">
+        <label for="property_sub_type_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Property sub type" type="text" id="property_sub_type_box" name="filter_subtype">
+      </div>
+
+      <div class="col">
+        <label for="location_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Location (contains)" type="text" id="location_box" name="filter_location">
+      </div>
+      
+      </div>
+      
+
+      
+        </div>
+      <div  class="row">
+
+      <div class="col">
+        <label for="occupancy_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Occupancy" type="text" id="occupancy_box" name="filter_occupancy">
+      </div>
+      
+      <div class="col">
+        <label for="preferred_tenant_box">
+          
+        </label>
+
+        <input class="form-control" placeholder="Preferred tenant" type="text" id="preferred_tenant_box" name="filter_tenant">
+      </div>
+
+      
+      </div>
+
+      <button class="btn btn-primary" >
+        Apply filter/sorting
+      </button>
+    </form>
+
+  </div>
