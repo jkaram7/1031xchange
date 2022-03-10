@@ -6,7 +6,7 @@
 
     <div>
 
-      <% if session.fetch(:user_id) == @the_acquisition_criterium.user.id %>
+      <% if session.fetch(:user_id) == @the_acquisition_criterium.user.id || session.fetch(:user_id) == 1 %>
       <div>
         <a href="/delete_acquisition_criterium/<%= @the_acquisition_criterium.id %>" class="btn btn-danger" >
           Delete acquisition criterium
