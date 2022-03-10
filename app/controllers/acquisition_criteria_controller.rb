@@ -31,30 +31,29 @@ class AcquisitionCriteriaController < ApplicationController
     filter_tenant = params.fetch("filter_tenant")
     filter_sqfts = params.fetch("filter_sqfts")
     filter_sqftl = params.fetch("filter_sqftl")
-
-    sort_by = params.fetch("sort_by", false)
-    asc = params.fetch("asc", false)
+    
+    sort_by = params.fetch("sort_by", 0).to_i
+    asc = params.fetch("asc", 0).to_i
 
     sort_criteria = 0
 
-    if sort_by == "Type"
+    if sort_by == 1
       sort_criteria = 1
-    elsif sort_by == "Loc."
+    elsif sort_by == 2
       sort_criteria = 3
-    elsif sort_by == "Size"
+    elsif sort_by == 3
       sort_criteria = 5
-    elsif sort_by == "Posted"
+    elsif sort_by == 4
       sort_criteria = 7
     end
 
     if sort_criteria != 0
-      if asc == true
+      if asc == 1
         sort_criteria = sort_criteria + 1
       end
     end
 
-
-    @list_of_acquisition_criteria = matching_acquisition_criteria.where({:active => true}).order({ :created_at => :desc })
+    @list_of_acquisition_criteria = matching_acquisition_criteria.where({:active => true})
 
     if filter_dates != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("period_end_date > ?", filter_dates)
@@ -69,7 +68,7 @@ class AcquisitionCriteriaController < ApplicationController
     end
 
     if filter_location != ""
-      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where({:location => filter_location})
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("location LIKE ?", "%#{filter_location}%")
     end
 
     if filter_sizes != ""
@@ -119,14 +118,13 @@ class AcquisitionCriteriaController < ApplicationController
     if filter_sqftl != ""
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.where("sq_feet < ?", filter_sqftl)
     end
-
-    if sort_criteria != ""
+    
     if sort_criteria == 1
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :product_type => :desc })
     elsif sort_criteria == 2
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :product_type => :asc })
     elsif sort_criteria == 3
-      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :location => :asc })
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :location => :desc })
     elsif sort_criteria == 4
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :location => :asc })
     elsif sort_criteria == 5
@@ -134,10 +132,11 @@ class AcquisitionCriteriaController < ApplicationController
     elsif sort_criteria == 6
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :trade_size => :asc })
     elsif sort_criteria == 7
-      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :created_at => :asc })
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :created_at => :desc })
     elsif sort_criteria == 8
       @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :created_at => :asc })
-    end
+    else 
+      @list_of_acquisition_criteria =@list_of_acquisition_criteria.order({ :created_at => :desc })
     end
 
     render({ :template => "acquisition_criteria/index.html.erb" })

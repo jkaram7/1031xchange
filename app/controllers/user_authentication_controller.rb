@@ -61,7 +61,7 @@ class UserAuthenticationController < ApplicationController
 
     matching_acquisition_criteria = AcquisitionCriterium.all
 
-    matching_acquisition_criteria = matching_acquisition_criteria.where({:id_user => session.fetch(:user_id) })
+    matching_acquisition_criteria = matching_acquisition_criteria.where({:active => true}).where({:id_user => session.fetch(:user_id) })
 
     @list_of_acquisition_criteria = matching_acquisition_criteria.order({ :created_at => :desc })
 
