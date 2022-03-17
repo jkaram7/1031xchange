@@ -1,4 +1,10 @@
 class AcquisitionCriteriaController < ApplicationController
+
+  def aboutme
+
+    render({ :template => "acquisition_criteria/about.html.erb" })
+  end
+
   def filter
 
     render({ :template => "acquisition_criteria/filter.html.erb" })

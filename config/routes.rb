@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  # about me
+  get("/aboutme", { :controller => "acquisition_criteria", :action => "aboutme" })
+
   # homepage
   get("/", { :controller => "acquisition_criteria", :action => "index" })
 
